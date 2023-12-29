@@ -1,0 +1,258 @@
+// Footer
+.footer {
+  padding: 124px 0;
+  background-color: #232323;
+
+  @media (max-width: $breakpoint1450) {
+    padding: 80px 0;
+  }
+
+  @media (max-width: $breakpoint992) {
+    padding: 50px 0 20px;
+  }
+
+  @media (max-width: $breakpoint768) {
+    padding: 30px 0;
+  }
+
+  // .footer__inner
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    row-gap: 64px;
+
+    @media (max-width: $breakpoint992) {
+      row-gap: 40px;
+    }
+
+    @media (max-width: $breakpoint768) {
+      row-gap: 20px;
+    }
+  }
+
+  // .footer__top
+
+  &__top {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    column-gap: 20px;
+
+    @media (max-width: $breakpoint992) {
+      display: grid;
+      grid-template-columns: 1fr 48px 240px;
+      row-gap: 40px;
+      column-gap: 60px;
+    }
+
+    @media (max-width: $breakpoint768) {
+      display: flex;
+      flex-wrap: wrap;
+      margin-bottom: 60px;
+    }
+  }
+
+  // .footer__nav
+
+  &__nav {
+    flex: 0 1 714px;
+    width: 100%;
+
+    @media (max-width: $breakpoint992) {
+      order: 2;
+    }
+
+    @media (max-width: $breakpoint768) {
+      flex: 0 1 calc(100% - 120px);
+    }
+  }
+
+  // .footer__list
+
+  &__list {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    column-gap: 20px;
+
+    @media (max-width: $breakpoint992) {
+      flex-direction: column;
+      row-gap: 20px;
+    }
+  }
+
+  // .footer__item
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+  }
+
+  // .footer__item-link
+
+  &__item-link {
+    display: inline-flex;
+    font-size: 18px;
+    color: var(--white-color);
+
+    @media (max-width: $breakpoint1450) {
+      font-size: 16px;
+    }
+
+    @media (max-width: $breakpoint992) {
+      font-size: 18px;
+    }
+  }
+
+  // .footer__contacts
+
+  &__contacts {
+    display: flex;
+    flex-direction: column;
+    row-gap: 40px;
+
+    @media (max-width: $breakpoint992) {
+      order: 4;
+    }
+  }
+
+  // .footer__contact
+
+  &__contact {
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+  }
+
+  // .footer__contact-label
+
+  &__contact-label {
+    font-size: 24px;
+    line-height: 100%;
+    color: var(--white-color);
+
+    @media (max-width: $breakpoint1450) {
+      font-size: 20px;
+    }
+
+    @media (max-width: $breakpoint992) {
+      font-size: 24px;
+    }
+  }
+
+  // .footer__contact-text
+
+  &__contact-text {
+    font-style: normal;
+    font-size: 18px;
+    line-height: 100%;
+    color: var(--white-color);
+
+    @media (max-width: $breakpoint1450) {
+      font-size: 16px;
+    }
+
+    @media (max-width: $breakpoint992) {
+      font-size: 18px;
+    }
+  }
+
+  // .footer__socials
+
+  &__socials {
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+
+    @media (max-width: $breakpoint992) {
+      order: 2;
+    }
+
+    @media (max-width: $breakpoint768) {
+      order: 3;
+      flex: 0 0 48px;
+    }
+  }
+
+  // .footer__social
+
+  &__social {}
+
+  // .footer__social-link
+
+  &__social-link {
+    @media (max-width: $breakpoint1450) {
+      img {
+        width: 36px;
+        height: 36px;
+      }
+    }
+
+    @media (max-width: $breakpoint992) {
+      img {
+        width: 48px;
+        height: 48px;
+      }
+    }
+  }
+
+  // .footer__logos
+
+  &__logos {
+    display: flex;
+    flex-direction: column;
+    row-gap: 40px;
+
+    @media (max-width: $breakpoint992) {
+      order: 3;
+    }
+
+    @media (max-width: $breakpoint768) {
+      order: 1;
+      flex: 0 1 100%;
+    }
+  }
+
+  // .footer__logo
+
+  &__logo {
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    @media (max-width: $breakpoint768) {
+      text-align: center;
+    }
+  }
+
+  // .footer__registr
+
+  &__registr {
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--white-color);
+
+    @media (max-width: $breakpoint768) {
+      display: none;
+    }
+  }
+
+  // .footer__copy
+
+  &__copy {
+    font-size: 12px;
+    font-weight: 400;
+    color: var(--white-color);
+  }
+
+  &__copy--registr-mobile {
+    display: none;
+
+    @media (max-width: $breakpoint768) {
+      display: block;
+    }
+  }
+}
