@@ -51,3 +51,155 @@ function fixedNav() {
   }
 }
 window.addEventListener('scroll', fixedNav)
+
+
+//плавный скролл
+const anchors = document.querySelectorAll('a[href*="#"]')
+
+for (let anchor of anchors) {
+  anchor.addEventListener('click', function (e) {
+    e.preventDefault()
+
+    const blockID = anchor.getAttribute('href').substr(1)
+
+    document.getElementById(blockID).scrollIntoView({
+      behavior: 'smooth',
+      block: 'start'
+    })
+  })
+};
+
+function phoneMask() {
+  const formContainer = document.querySelector('.form');
+
+  if (!formContainer) {
+    return null;
+  }
+
+  let formPhones = document.querySelectorAll('.js-input-phone');
+
+  formPhones.forEach(formPhone => {
+    const mask = IMask(formPhone, {
+      mask: [
+        {
+          mask: '+{7}(000)000-00-00',
+          startsWith: '7',
+          prepare: value => (value[0] === '8' ? value.slice(1) : value)
+        },
+        {
+          mask: '8(000)000-00-00',
+          startsWith: '8',
+        }
+      ]
+    });
+
+  });
+}
+
+phoneMask();
+
+// validate////////////////////////////////////////////////////////////////////////////////////////////////////////
+let forms = document.querySelectorAll('.form');
+
+forms.forEach(form => {
+  form.addEventListener('submit', function (event) {
+    event.preventDefault(); // Prevent the default form submission
+
+    let formInputs = form.querySelectorAll('.js-input'),
+      inputPhone = form.querySelector('.js-input-phone'),
+      inputEmail = form.querySelector('.js-input-email');
+
+    function validatePhone(phone) {
+      let re = /^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$/;
+      return re.test(String(phone));
+    }
+
+    function validateEmail(email) {
+      let re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+      return re.test(String(email).toLowerCase());
+    }
+
+    function hasClassInParents(element, className) {
+      if (element.classList.contains(className)) {
+        return true;
+      } else if (element.parentElement) {
+        return hasClassInParents(element.parentElement, className);
+      } else {
+        return false;
+      }
+    }
+
+    let hasValidationFailed = false;
+
+    formInputs.forEach(function (input) {
+      if (input.classList.contains('js-input-email') && !validateEmail(input.value)) {
+        console.log('Email not valid');
+        input.classList.add('error');
+        hasValidationFailed = true;
+      } else if (input.classList.contains('js-input-phone') && !validatePhone(input.value)) {
+        console.log('Phone not valid');
+        input.classList.add('error');
+        hasValidationFailed = true;
+      } else if (input.value === '') {
+        console.log('Input not filled');
+        input.classList.add('error');
+        hasValidationFailed = true;
+      } else {
+        input.classList.remove('error');
+      }
+    });
+
+    if (hasValidationFailed) {
+      console.log('Validation failed');
+    } else {
+      console.log('Form submitted successfully!');
+      // Update button text and icon on success
+      const submitButton = form.querySelector('.form__btn');
+      submitButton.querySelector('.form__btn-text').innerText = 'Ваша заявка принята!';
+      submitButton.querySelector('.form__btn-icon').src = './img/icons/check.svg';
+      submitButton.querySelector('.form__btn-icon').alt = 'check icon';
+    }
+  });
+});
+
+
+function map() {
+  const container = document.querySelector('.map')
+  if (!container) {
+    return null
+  }
+
+  let center = [59.959048, 30.353058];
+
+  function init() {
+
+
+    let map = new ymaps.Map('map', {
+      center: center,
+      zoom: 15
+    });
+
+    let placemark = new ymaps.Placemark(center, {}, {
+      iconLayout: 'default#image',
+      iconImageHref: './img/pin.svg',
+      // iconImageHref: '/local/templates/main/img/pin.svg',
+      iconImageSize: [42, 42],
+      iconImageOffset: [-14, -64]
+    })
+
+    map.geoObjects.add(placemark);
+
+    map.controls.remove('geolocationControl'); // удаляем геолокацию
+    map.controls.remove('searchControl'); // удаляем поиск
+    map.controls.remove('trafficControl'); // удаляем контроль трафика
+    map.controls.remove('typeSelector'); // удаляем тип
+    map.controls.remove('fullscreenControl'); // удаляем кнопку перехода в полноэкранный режим
+    map.controls.remove('zoomControl'); // удаляем контрол зуммирования
+    map.controls.remove('rulerControl'); // удаляем контрол правил
+    // map.behaviors.disable(['scrollZoom']); // отключаем скролл карты (опционально)
+  }
+
+  ymaps.ready(init);
+}
+
+map();
