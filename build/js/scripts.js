@@ -131,9 +131,33 @@ function doctorsSlider() {
 doctorsSlider();
 
 
+function doctors() {
+  // Get all slides and contents
+  const slides = document.querySelectorAll('[data-doctor-slide]');
+  const contents = document.querySelectorAll('[data-doctor-content]');
 
+  // Add click event listener to each slide
+  slides.forEach(slide => {
+    slide.addEventListener('click', () => {
+      // Remove 'active' class from all slides
+      slides.forEach(s => s.classList.remove('active'));
 
+      // Add 'active' class to the clicked slide
+      slide.classList.add('active');
 
+      // Get the corresponding content index
+      const contentIndex = slide.getAttribute('data-doctor-slide');
+
+      // Remove 'active' class from all contents
+      contents.forEach(content => content.classList.remove('active'));
+
+      // Add 'active' class to the corresponding content
+      contents[contentIndex - 1].classList.add('active');
+    });
+  });
+}
+
+doctors();
 
 
 function phoneMask() {
