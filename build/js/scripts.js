@@ -132,6 +132,11 @@ doctorsSlider();
 
 
 function doctors() {
+  const container = document.querySelector('.doctors');
+
+  if (!container) {
+    return null
+  }
   // Get all slides and contents
   const slides = document.querySelectorAll('[data-doctor-slide]');
   const contents = document.querySelectorAll('[data-doctor-content]');

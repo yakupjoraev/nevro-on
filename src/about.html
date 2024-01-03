@@ -11,16 +11,21 @@
 
 <body class="main__body">
   <!-- Header -->
-  <!-- @@include('./html/_header.html') -->
+  @@include('./html/_header-pages.html')
 
   <!-- Main Page -->
-  <main></main>
+  <main>
+    @@include('./html/_about.html')
+    @@include('./html/_callback.html')
+    @@include('./html/_map.html')
+  </main>
 
   <!-- Footer -->
-  <!-- @@include('./html/_footer.html') -->
+  @@include('./html/_footer.html')
 
 </body>
 
+<script src="./js/imask.js"></script>
 <script src="https://api-maps.yandex.ru/2.1/?apikey=ваш API-ключ&lang=ru_RU"></script>
 <script src="./js/scripts.min.js"></script>
 

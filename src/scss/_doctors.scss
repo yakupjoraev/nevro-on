@@ -6,6 +6,24 @@
     display: flex;
     flex-direction: column;
     row-gap: 60px;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 1782.197px;
+      height: 100%;
+      background-image: url('../img/news-page/bg.svg');
+      background-repeat: no-repeat;
+      background-position: top right;
+      // z-index: -1;
+
+      @media (max-width: $breakpoint992) {
+        width: 100%;
+        height: 100%;
+      }
+    }
   }
 
   // .doctors__slider
