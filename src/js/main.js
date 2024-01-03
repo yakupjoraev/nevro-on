@@ -69,6 +69,35 @@ for (let anchor of anchors) {
   })
 };
 
+function moreText() {
+  const containers = document.querySelectorAll('[data-more-wrapper]');
+
+  if (!containers) {
+    return null
+  }
+  containers.forEach(container => {
+    const toggleButton = container.querySelector("[data-more-btn]");
+    const textBlock = container.querySelector("[data-more-text]");
+
+    container.addEventListener("click", function () {
+      this.classList.toggle("more");
+      textBlock.classList.toggle("more");
+
+      if (textBlock) {
+        if (textBlock.classList.contains("more")) {
+          toggleButton.querySelector('span').innerText = "Свернуть";
+        } else {
+          toggleButton.querySelector('span').innerText = "Нажмите, чтобы открыть";
+        }
+      }
+    });
+  });
+
+
+}
+
+moreText();
+
 function phoneMask() {
   const formContainer = document.querySelector('.form');
 

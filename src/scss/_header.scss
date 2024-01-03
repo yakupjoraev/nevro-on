@@ -314,7 +314,6 @@
     }
   }
 
-
   .menu__item {
     order: 2;
   }
@@ -366,6 +365,7 @@
     width: 180px;
     height: 60px;
   }
+
 }
 
 @media (max-width: $breakpoint768) {
@@ -378,4 +378,33 @@
     border-radius: 0px 0px 25px 25px;
     row-gap: 20px;
   }
+}
+
+@media (max-width: $breakpoint480) {
+
+  .menu.active {
+    border-radius: 0;
+  }
+}
+
+.logo__img--white {
+  display: none;
+}
+
+.logo--pages {}
+
+@media screen and (max-width: 1300px) {
+  .main__body.locked {
+    .header--pages {
+
+      .logo__img {
+        display: none;
+      }
+
+      .logo__img--white {
+        display: flex;
+      }
+    }
+  }
+
 }

@@ -6,9 +6,12 @@
 
 // Sections or Pages SCSS-files imports
 @import './header';
+@import './base';
+@import './more-text';
 @import './callback';
 @import './form';
 @import './map';
+@import './news-page';
 @import './footer';
 
 // Libs
