@@ -98,6 +98,43 @@ function moreText() {
 
 moreText();
 
+
+function doctorsSlider() {
+  const container = document.querySelector('.doctors');
+  if (!container) {
+    return null
+  }
+
+  const swiper = new Swiper('.doctors__swiper', {
+    // Default parameters
+    slidesPerView: "auto",
+    spaceBetween: 40,
+
+    pagination: {
+      el: '.doctors__swiper-pagination',
+      type: 'bullets',
+      clickable: true
+    },
+
+    // Responsive breakpoints
+    breakpoints: {
+
+      // when window width is >= 1200px
+      1200: {
+        spaceBetween: 80
+      }
+    }
+  })
+}
+
+doctorsSlider();
+
+
+
+
+
+
+
 function phoneMask() {
   const formContainer = document.querySelector('.form');
 

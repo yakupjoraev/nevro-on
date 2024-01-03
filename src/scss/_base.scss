@@ -12,6 +12,10 @@
   border-radius: 20px;
   background-color: var(--white-color);
 
+  & * {
+    z-index: 1;
+  }
+
   &::before {
     content: '';
     position: absolute;
