@@ -258,10 +258,13 @@
       transition: fill 0.2s linear;
     }
 
-    &:hover {
-      svg path {
-        fill: var(--primary-color);
+    @media (hover: hover) {
+      &:hover {
+        svg path {
+          fill: var(--primary-color);
+        }
       }
     }
+
   }
 }

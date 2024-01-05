@@ -1,0 +1,159 @@
+.about {
+
+  // .about__inner
+
+  &__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  // .about__info
+
+  &__info {
+    flex: 0 1 50%;
+    max-width: 610px;
+
+    @media (max-width: $breakpoint992) {
+      flex: 0 1 70%;
+    }
+
+    @media (max-width: $breakpoint768) {
+      flex: 0 1 100%;
+    }
+  }
+
+  // .about__label
+
+  &__label {
+    margin-bottom: 46px;
+    font-size: 20px;
+    font-weight: 300;
+    text-transform: uppercase;
+
+    @media (max-width: $breakpoint992) {
+      margin-bottom: 32px;
+      font-size: 18px;
+    }
+
+    @media (max-width: $breakpoint768) {
+      font-size: 16px;
+    }
+  }
+
+  // .about__quotter
+
+  &__quotter {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 40px;
+
+    @media (max-width: $breakpoint992) {
+      margin-bottom: 32px;
+    }
+  }
+
+  // .about__quotter-pic
+
+  &__quotter-pic {
+    width: 26px;
+    height: 22px;
+  }
+
+  // .about__quotter-pic--left
+
+  &__quotter-pic--left {
+    margin-right: auto;
+  }
+
+  // .about__quotter-text
+
+  &__quotter-text {
+    font-size: 20px;
+    font-weight: 300;
+    line-height: normal;
+
+    b {
+      display: block;
+    }
+
+    @media (max-width: $breakpoint992) {
+      font-size: 18px;
+    }
+
+    @media (max-width: $breakpoint768) {
+      font-size: 14px;
+      line-height: 140%;
+    }
+  }
+
+  // .about__quotter-pic--right
+
+  &__quotter-pic--right {
+    margin-left: auto;
+  }
+
+  // .about__author
+
+  &__author {
+    font-size: 20px;
+    font-weight: 400;
+    color: var(--black-color);
+
+    i {
+      font-style: italic;
+      font-weight: 300;
+    }
+
+    @media (max-width: $breakpoint992) {
+      font-size: 18px;
+    }
+
+    @media (max-width: $breakpoint768) {
+      font-size: 16px;
+    }
+  }
+
+  &__picture {
+    flex: 0 1 50%;
+
+    @media (max-width: 1200px) {
+      opacity: 0.4;
+      z-index: 0;
+    }
+
+    @media (max-width: $breakpoint992) {}
+
+    @media (max-width: $breakpoint768) {
+      display: none;
+    }
+  }
+
+  &__pic {
+    position: absolute;
+    top: 0;
+    right: 0;
+    max-width: 100%;
+    height: 100%;
+    border-radius: 20px;
+
+    @media (max-width: 1600px) {
+      object-position: 200px;
+    }
+
+    @media (max-width: $breakpoint1450) {
+      object-position: 300px;
+    }
+
+    @media (max-width: 1200px) {
+      object-position: 400px;
+    }
+
+    @media (max-width: $breakpoint768) {
+      object-position: 0;
+      height: auto;
+      top: auto;
+      bottom: 0;
+    }
+  }
+}

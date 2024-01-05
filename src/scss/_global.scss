@@ -31,6 +31,11 @@ body {
   line-height: normal;
   color: var(--black-color);
 
+  @media (max-width: $breakpoint992) {
+    background-color: var(--white-color);
+  }
+
+
   &.locked {
     overflow: hidden;
   }

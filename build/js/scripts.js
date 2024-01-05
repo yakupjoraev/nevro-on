@@ -165,6 +165,53 @@ function doctors() {
 doctors();
 
 
+function services() {
+  // Get all services items
+  let servicesItems = document.querySelectorAll('[data-services-item]');
+  let allContents = document.querySelectorAll('[data-services-content]');
+
+  // Add click event listener to each services item
+  servicesItems.forEach(function (item) {
+    item.addEventListener('click', function () {
+      // Remove "active" class from all services items
+      servicesItems.forEach(function (item) {
+        item.classList.remove('active');
+      });
+
+      // Add "active" class to the clicked services item
+      item.classList.add('active');
+
+      // Get the corresponding services content
+      const contentId = item.getAttribute('data-services-item');
+      const content = document.querySelector('[data-services-content="' + contentId + '"]');
+
+      // Remove "active" class from all services content
+      allContents.forEach(function (content) {
+        content.classList.remove('active');
+      });
+
+      // Add "active" class to the corresponding services content
+      content.classList.add('active');
+    });
+
+  });
+
+  if (window.matchMedia("(max-width: 767px)").matches) {
+    allContents.forEach(allContent => {
+      const btn = allContent.querySelector('[data-services-btn]');
+
+      btn.addEventListener('click', () => {
+        allContent.classList.toggle('open')
+        btn.textContent = btn.textContent === "Показать ещё" ? "Скрыт" : "Показать ещё";
+      })
+    });
+  }
+};
+
+services();
+
+
+
 function phoneMask() {
   const formContainer = document.querySelector('.form');
 

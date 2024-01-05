@@ -1,0 +1,140 @@
+.section {}
+
+.about-block {
+
+  // .about-block__inner
+
+  &__inner {}
+
+  // .about-block__title
+
+  &__title {
+    font-size: 60px;
+    font-weight: 500;
+    line-height: normal;
+
+    @media (max-width: $breakpoint1450) {
+      font-size: 40px;
+    }
+
+    @media (max-width: $breakpoint992) {
+      font-size: 32px;
+    }
+  }
+
+  // .about-block__main
+
+  &__main {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    column-gap: 120px;
+
+    @media (max-width: $breakpoint1450) {
+      column-gap: 60px;
+    }
+
+    @media (max-width: $breakpoint768) {
+      flex-direction: column;
+      row-gap: 100px;
+    }
+  }
+
+  // .about-block__pictures
+
+  &__pictures {
+    position: relative;
+    flex: 0 0 450px;
+
+    @media (max-width: $breakpoint1450) {
+      flex: 0 0 380px;
+    }
+
+    @media (max-width: $breakpoint992) {
+      flex: 0 0 300px;
+    }
+
+    @media (max-width: $breakpoint768) {
+      flex: 0 1 auto;
+    }
+  }
+
+  // .about-block__pic
+
+  &__pic {
+    max-width: 100%;
+    object-fit: cover;
+
+
+    @media (max-width: $breakpoint768) {
+      height: auto;
+    }
+  }
+
+  // .about-block__pic--absalute
+
+  &__pic--absalute {
+    position: absolute;
+    bottom: 40px;
+    right: -200px;
+
+    @media (max-width: $breakpoint1450) {
+      right: -100px;
+    }
+
+    @media (max-width: $breakpoint992) {
+      right: -40px;
+    }
+
+    @media (max-width: $breakpoint768) {
+      bottom: -40px;
+      right: -20px;
+      max-width: 80%;
+      height: auto;
+    }
+  }
+
+  // .about-block__texts
+
+  &__texts {
+    display: flex;
+    flex-direction: column;
+    row-gap: 60px;
+
+    @media (max-width: $breakpoint1450) {
+      row-gap: 40px;
+    }
+
+    @media (max-width: $breakpoint992) {
+      row-gap: 20px;
+    }
+  }
+
+  // .about-block__text
+
+  &__text {
+    font-size: 20px;
+    line-height: 130%;
+    color: var(--black-color);
+
+    @media (max-width: $breakpoint1450) {
+      font-size: 18px;
+    }
+
+    @media (max-width: $breakpoint992) {
+      font-size: 16px;
+    }
+  }
+
+  // .about-block__text-mini
+
+  &__text--right {
+    max-width: 70%;
+    margin-left: auto;
+    text-align: right;
+
+    @media (max-width: $breakpoint992) {
+      max-width: 80%;
+    }
+  }
+}
