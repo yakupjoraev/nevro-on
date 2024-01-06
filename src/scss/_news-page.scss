@@ -78,7 +78,8 @@
     }
 
     @media (max-width: $breakpoint768) {
-      grid-template-columns: repeat(1, 1fr);
+      display: flex;
+      flex-direction: column;
       border-radius: 10px;
     }
   }
@@ -111,6 +112,7 @@
 
     @media (max-width: $breakpoint768) {
       flex: 0 1 auto;
+      width: 100%;
       text-align: center;
     }
   }
