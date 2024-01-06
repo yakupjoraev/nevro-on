@@ -33,6 +33,7 @@
       flex: 0 1 auto;
       width: 100%;
     }
+
   }
 
   // .form__title
@@ -267,4 +268,84 @@
     }
 
   }
+}
+
+.form__group--select {
+
+  option {
+    padding: 10px;
+    font-size: 16px;
+  }
+
+  &::after {
+    position: absolute;
+    content: '';
+    right: 10px;
+    top: 50%;
+    width: 20px;
+    height: 20px;
+    transform: translateY(-50%) rotate(90deg);
+    background-image: url('../img/icons/arrow-right.svg');
+    background-repeat: no-repeat;
+    filter: invert(1);
+  }
+}
+
+.form__input--select {
+  position: relative;
+  padding: 10px 20px;
+
+  appearance: none;
+  /* safari */
+  -webkit-appearance: none;
+  /* other styles for aesthetics */
+
+
+}
+
+
+.form__input--textarea {
+  resize: none;
+  height: 100px;
+
+  &::placeholder {
+    padding-top: 30px;
+    vertical-align: middle;
+  }
+
+  @media (max-width: $breakpoint992) {
+    height: 100px;
+  }
+}
+
+.form__checkbox-label {
+  display: flex;
+  align-items: center;
+  column-gap: 10px;
+  cursor: pointer;
+}
+
+.form__checkobox {
+  position: absolute;
+  width: 0;
+  height: 0;
+  opacity: 0;
+  z-index: -100;
+
+  &:checked~.form__checkobox-decor {
+    background: var(--primary-color);
+  }
+}
+
+.form__checkobox-decor {
+  width: 25px;
+  min-width: 25px;
+  height: 25px;
+  border-radius: 2px;
+  border: 1px solid #D7D7D7;
+  background: #F4F4F4;
+}
+
+.form__checkobox-text {
+  font-size: 12px;
 }

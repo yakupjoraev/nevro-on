@@ -1,0 +1,256 @@
+.directions {
+  position: relative;
+  z-index: 2;
+
+  // .directions__inner
+
+  &__inner {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    column-gap: 36px;
+
+    @media (max-width:1640px) {
+      column-gap: 20px;
+    }
+
+    @media (max-width: $breakpoint992) {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      row-gap: 20px;
+    }
+  }
+
+  // .directions__catalog
+
+  &__catalog {
+    margin-top: -200px;
+    flex: 0 1 660px;
+    padding: 70px 24px 32px;
+    border-radius: 20px;
+    border: 1px solid #D7D7D7;
+    background-color: #F4F4F4;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+
+    @media (max-width: $breakpoint1450) {
+      flex: 0 1 50%;
+    }
+
+    @media (max-width: $breakpoint992) {
+      flex: 0 1 auto;
+      width: 100%;
+      margin-top: -100px;
+    }
+
+    @media (max-width: $breakpoint992) {
+      padding: 40px 20px 20px;
+    }
+  }
+
+  // .directions__title
+
+  &__title {
+    margin-bottom: 40px;
+    font-size: 46px;
+    line-height: 100%;
+    text-transform: uppercase;
+
+    @media (max-width:1640px) {
+      margin-bottom: 30px;
+      font-size: 30px;
+    }
+
+    @media (max-width: $breakpoint992) {
+      margin-bottom: 20px;
+      font-size: 24px;
+    }
+  }
+
+  // .directions__list
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 24px;
+    column-gap: 24px;
+    padding: 24px 40px;
+
+    @media (max-width:1640px) {
+      padding: 20px 0;
+    }
+
+    @media (max-width: $breakpoint992) {
+      padding: 0;
+      row-gap: 16px;
+    }
+
+    @media (max-width: $breakpoint768) {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+
+  // .directions__item
+
+  &__item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 10px;
+    min-height: 100px;
+    border-radius: 20px;
+    border: 1px solid #D7D7D7;
+    background: #FFF;
+    backdrop-filter: blur(5px);
+    overflow: hidden;
+
+
+    font-size: 18px;
+    font-weight: 700;
+    text-transform: uppercase;
+
+    @media (max-width:1640px) {
+      font-size: 16px;
+    }
+
+    @media (max-width: $breakpoint1450) {
+      font-size: 14px;
+    }
+
+    @media (max-width: $breakpoint992) {
+      min-height: 80px;
+      height: 80px;
+    }
+
+    @media (max-width: 359px) {
+      font-size: 14px;
+      min-height: 60px;
+      height: 60px;
+    }
+  }
+
+  // .directions__item--column-2
+
+  &__item--column-2 {
+    grid-column: span 2;
+
+    justify-content: flex-start;
+
+    span {
+      margin: 0 auto;
+    }
+
+    @media (max-width: $breakpoint768) {
+      grid-column: span 1;
+
+      @media (max-width: 359px) {
+
+        .directions__item-img {
+          width: 100%;
+          max-width: 60px;
+          height: 100%;
+        }
+      }
+
+    }
+  }
+
+  // .directions__item-img
+
+  &__item-img {
+    max-width: 100%;
+    height: auto;
+
+
+
+  }
+
+  // .directions__form
+
+  &__form {
+    flex: 0 1 960px;
+
+    padding: 60px;
+    border-radius: 20px;
+    background: #FFF;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+
+
+    @media (max-width: $breakpoint1450) {
+      flex: 0 1 50%;
+    }
+
+    @media (max-width: $breakpoint992) {
+      flex: 0 1 auto;
+      width: 100%;
+      padding: 40px 20px;
+    }
+
+    .form {
+
+      // .form__title
+
+      &__title {
+        margin-bottom: 24px;
+        font-size: 46px;
+        text-transform: uppercase;
+        color: var(--black-color);
+
+        @media (max-width:1640px) {
+          margin-bottom: 20px;
+          font-size: 32px;
+        }
+
+        @media (max-width: $breakpoint992) {
+          text-align: left;
+        }
+
+        @media (max-width: $breakpoint768) {
+          font-size: 24px;
+        }
+      }
+
+      // .form__descr
+
+      &__descr {
+        font-size: 18px;
+        color: var(--black-color);
+
+        @media (max-width: $breakpoint768) {
+          font-size: 16px;
+        }
+      }
+
+      // .form__groups
+
+      &__groups {
+        grid-template-columns: repeat(1, 1fr);
+
+        max-width: 330px;
+
+        @media (max-width: $breakpoint768) {
+          max-width: 100%;
+        }
+      }
+
+      // .form__btn
+
+      &__btn {
+        max-width: 330px;
+        background-color: var(--secondary-color);
+
+        @media (hover: hover) {
+          &:hover {
+            background-color: var(--primary-color);
+          }
+        }
+
+        @media (max-width: $breakpoint768) {
+          max-width: 100%;
+          min-height: 60px;
+        }
+      }
+
+    }
+  }
+}
