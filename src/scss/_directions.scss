@@ -5,10 +5,55 @@
   // .directions__inner
 
   &__inner {
+    position: relative;
+    z-index: 1;
     display: flex;
     align-items: flex-end;
     justify-content: center;
     column-gap: 36px;
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: -100px;
+      right: -14%;
+      width: 800px;
+      height: 1224px;
+      background-image: url('../img/directions/phone.png');
+      background-repeat: no-repeat;
+      background-position: center top;
+      background-size: cover;
+      // z-index: -1;
+
+      @media (max-width:1640px) {
+        width: 700px;
+        height: 900px;
+        right: -8%;
+        top: 0;
+      }
+
+      @media (max-width: $breakpoint1450) {
+        width: 400px;
+        height: 600px;
+        top: 10%;
+
+        transform: rotate(18deg);
+      }
+
+      @media (max-width: 1200px) {
+        right: -15%;
+      }
+
+      @media (max-width: $breakpoint992) {
+        top: auto;
+        bottom: -10%;
+        right: 0;
+      }
+
+      @media (max-width: $breakpoint768) {
+        display: none;
+      }
+    }
 
     @media (max-width:1640px) {
       column-gap: 20px;
@@ -18,14 +63,14 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      row-gap: 20px;
+      row-gap: 40px;
     }
   }
 
   // .directions__catalog
 
   &__catalog {
-    margin-top: -200px;
+    margin-top: -260px;
     flex: 0 1 660px;
     padding: 70px 24px 32px;
     border-radius: 20px;
@@ -160,14 +205,12 @@
   &__item-img {
     max-width: 100%;
     height: auto;
-
-
-
   }
 
   // .directions__form
 
   &__form {
+    position: relative;
     flex: 0 1 960px;
 
     padding: 60px;
@@ -175,9 +218,34 @@
     background: #FFF;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 
+    &::before {
+      content: '';
+      position: absolute;
+      top: -40px;
+      left: 0;
+      width: 100%;
+      height: 64px;
+      background-image: url('../img/directions/top.svg');
+      background-repeat: no-repeat;
+      background-position: center top;
+      background-size: 100% 100%;
+      z-index: -1;
+
+      @media (max-width: $breakpoint768) {
+        top: -30px;
+      }
+
+    }
+
+
+
 
     @media (max-width: $breakpoint1450) {
       flex: 0 1 50%;
+    }
+
+    @media (max-width: 1200px) {
+      padding: 40px 20px;
     }
 
     @media (max-width: $breakpoint992) {
@@ -228,6 +296,10 @@
 
         max-width: 330px;
 
+        @media (max-width: 1200px) {
+          max-width: 240px;
+        }
+
         @media (max-width: $breakpoint768) {
           max-width: 100%;
         }
@@ -243,6 +315,10 @@
           &:hover {
             background-color: var(--primary-color);
           }
+        }
+
+        @media (max-width: 1200px) {
+          max-width: 240px;
         }
 
         @media (max-width: $breakpoint768) {

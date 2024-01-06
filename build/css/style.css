@@ -132,6 +132,7 @@ body.locked {
 html,
 body {
   min-height: 100vh;
+  overflow-x: hidden;
 }
 
 .main__body {
@@ -2322,6 +2323,8 @@ main {
 }
 
 .directions__inner {
+  position: relative;
+  z-index: 1;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2336,8 +2339,21 @@ main {
           column-gap: 36px;
 }
 
+.directions__inner::after {
+  content: "";
+  position: absolute;
+  top: -100px;
+  right: -14%;
+  width: 800px;
+  height: 1224px;
+  background-image: url("../img/directions/phone.png");
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: cover;
+}
+
 .directions__catalog {
-  margin-top: -200px;
+  margin-top: -260px;
   -webkit-box-flex: 0;
       -ms-flex: 0 1 660px;
           flex: 0 1 660px;
@@ -2408,6 +2424,7 @@ main {
 }
 
 .directions__form {
+  position: relative;
   -webkit-box-flex: 0;
       -ms-flex: 0 1 960px;
           flex: 0 1 960px;
@@ -2416,6 +2433,20 @@ main {
   background: #FFF;
   -webkit-box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
           box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.directions__form::before {
+  content: "";
+  position: absolute;
+  top: -40px;
+  left: 0;
+  width: 100%;
+  height: 64px;
+  background-image: url("../img/directions/top.svg");
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: 100% 100%;
+  z-index: -1;
 }
 
 .directions__form .form__title {
@@ -2708,6 +2739,13 @@ main {
 }
 
 @media (max-width: 1640px) {
+  .directions__inner::after {
+    width: 700px;
+    height: 900px;
+    right: -8%;
+    top: 0;
+  }
+
   .directions__inner {
     -webkit-column-gap: 20px;
        -moz-column-gap: 20px;
@@ -2971,6 +3009,15 @@ main {
 
   .services__item-content p {
     font-size: 16px;
+  }
+
+  .directions__inner::after {
+    width: 400px;
+    height: 600px;
+    top: 10%;
+    -webkit-transform: rotate(18deg);
+        -ms-transform: rotate(18deg);
+            transform: rotate(18deg);
   }
 
   .directions__catalog {
@@ -3319,6 +3366,22 @@ main {
   .about__pic {
     -o-object-position: 400px;
        object-position: 400px;
+  }
+
+  .directions__inner::after {
+    right: -15%;
+  }
+
+  .directions__form {
+    padding: 40px 20px;
+  }
+
+  .directions__form .form__groups {
+    max-width: 240px;
+  }
+
+  .directions__form .form__btn {
+    max-width: 240px;
   }
 }
 
@@ -3798,6 +3861,12 @@ main {
     padding: 10px 20px;
   }
 
+  .directions__inner::after {
+    top: auto;
+    bottom: -10%;
+    right: 0;
+  }
+
   .directions__inner {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -3809,7 +3878,7 @@ main {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    row-gap: 20px;
+    row-gap: 40px;
   }
 
   .directions__catalog {
@@ -4359,12 +4428,20 @@ main {
     font-size: 12px;
   }
 
+  .directions__inner::after {
+    display: none;
+  }
+
   .directions__list {
     grid-template-columns: repeat(1, 1fr);
   }
 
   .directions__item--column-2 {
     grid-column: span 1;
+  }
+
+  .directions__form::before {
+    top: -30px;
   }
 
   .directions__form .form__title {
