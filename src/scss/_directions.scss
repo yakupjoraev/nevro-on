@@ -23,6 +23,8 @@
       background-repeat: no-repeat;
       background-position: center top;
       background-size: cover;
+      user-select: none;
+      pointer-events: none;
       // z-index: -1;
 
       @media (max-width:1640px) {

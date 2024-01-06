@@ -47,7 +47,8 @@
             </div>
           </li>
 
-          <li class="menu__item menu__item--btn"><a href="#" class="menu__item-link" data-scroll>связаться с нами</a>
+          <li class="menu__item menu__item--btn"><a href="javascript:void(0);" class="menu__item-link open-modal-btn"
+              data-modal-id="modal1" data-scroll>связаться с нами</a>
           </li>
         </ul>
 
@@ -1271,6 +1272,68 @@
   </div>
 </div>
     <div class="map" id="map"></div>
+    <!-- Modal -->
+<div class="modal" id="modal1">
+  <div class="modal-content">
+    <button class="close-modal-btn">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+        <path
+          d="M18.0593 19.0557L0 0.996378L0.996378 6.7435e-07L19.0557 18.0593L18.0593 19.0557ZM0.996378 19.0557L0 18.0593L18.0593 0L19.0557 0.996378L0.996378 19.0557Z"
+          fill="black" />
+      </svg>
+    </button>
+
+    <form action="#" class="modal__form form">
+      <div class="form__inner">
+        <div class="form__main">
+          <h4 class="form__title">
+            Запросить звонок
+          </h4>
+
+          <p class="form__descr">
+            Время на обработку заявки ~5 минут
+          </p>
+
+          <div class="form__groups">
+            <div class="form__group">
+              <input class="form__input js-input" type="text" name="Имя" placeholder="ФИО пациента*">
+
+              <img class="form__icon" src="./img/icons/people.svg" alt="people">
+            </div>
+
+            <div class="form__group">
+              <input class="form__input js-input js-input-phone" type="text" name="Номер телефона*"
+                placeholder="Номер телефона*">
+
+              <img class="form__icon" src="./img/icons/phone.svg" alt="phone">
+            </div>
+
+            <div class="form__group">
+              <label class="form__checkbox-label" for="checkbox2">
+                <input class="form__checkobox" type="checkbox" id="checkbox2">
+
+                <div class="form__checkobox-decor"></div>
+                <p class="form__checkobox-text">Я согласен(-на) на обработку персональных данных</p>
+              </label>
+            </div>
+          </div>
+
+          <button type="submit" class="form__btn">
+            <span class="form__btn-text">Отправить</span>
+
+            <img class="form__btn-icon" src="./img/icons/arrow-right.svg" alt="arrow icon">
+          </button>
+        </div>
+
+      </div>
+
+      <div class="form__successfully">
+        <span>Ваша заявка принята! <br>
+          Благодарим за обращение</span>
+      </div>
+    </form>
+  </div>
+</div>
   </main>
 
   <!-- Footer -->

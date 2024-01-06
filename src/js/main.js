@@ -53,21 +53,21 @@ function fixedNav() {
 window.addEventListener('scroll', fixedNav)
 
 
-//плавный скролл
-const anchors = document.querySelectorAll('a[href*="#"]')
+// //плавный скролл
+// const anchors = document.querySelectorAll('a[href*="#"]')
 
-for (let anchor of anchors) {
-  anchor.addEventListener('click', function (e) {
-    e.preventDefault()
+// for (let anchor of anchors) {
+//   anchor.addEventListener('click', function (e) {
+//     e.preventDefault()
 
-    const blockID = anchor.getAttribute('href').substr(1)
+//     const blockID = anchor.getAttribute('href').substr(1)
 
-    document.getElementById(blockID).scrollIntoView({
-      behavior: 'smooth',
-      block: 'start'
-    })
-  })
-};
+//     document.getElementById(blockID).scrollIntoView({
+//       behavior: 'smooth',
+//       block: 'start'
+//     })
+//   })
+// };
 
 function moreText() {
   const containers = document.querySelectorAll('[data-more-wrapper]');
@@ -331,11 +331,26 @@ forms.forEach(form => {
       console.log('Validation failed');
     } else {
       console.log('Form submitted successfully!');
+
       // Update button text and icon on success
       const submitButton = form.querySelector('.form__btn');
       submitButton.querySelector('.form__btn-text').innerText = 'Ваша заявка принята!';
       submitButton.querySelector('.form__btn-icon').src = './img/icons/check.svg';
       submitButton.querySelector('.form__btn-icon').alt = 'check icon';
+
+      // Check if the form has the modal__form class
+      if (form.classList.contains('modal__form')) {
+        // Add 'successfully' class to the form
+        form.classList.add('successfully');
+
+        // Remove 'show' class from the modal after 2 seconds
+        setTimeout(() => {
+          form.classList.remove('successfully');
+          // Assuming you have a reference to the modal, you can remove its 'show' class here
+          const modal = document.querySelector('.modal');
+          modal.classList.remove('show');
+        }, 2000);
+      }
     }
   });
 });
@@ -383,3 +398,28 @@ function map() {
 map();
 
 
+
+const openModalBtns = document.querySelectorAll('.open-modal-btn');
+const closeModalBtns = document.querySelectorAll('.close-modal-btn');
+const modals = document.querySelectorAll('.modal');
+
+openModalBtns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    const modalId = btn.dataset.modalId;
+    const modal = document.getElementById(modalId);
+    modal.classList.add('show');
+  });
+});
+
+closeModalBtns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    const modal = btn.closest('.modal');
+    modal.classList.remove('show');
+  });
+});
+
+window.addEventListener('click', (event) => {
+  if (event.target.classList.contains('modal')) {
+    event.target.classList.remove('show');
+  }
+});

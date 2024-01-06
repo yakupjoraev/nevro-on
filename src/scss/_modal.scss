@@ -1,45 +1,120 @@
 // ************************ Модальное окно ************************ //
-// mf
-.modal__wrapper {
-    position: fixed;
-    left: 0;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    background: rgba(0, 0, 0, 0.8);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 2;
-    // display: none;
 
-    .modal {
-        background: white;
-        padding: 25px;
-        border-radius: 5px;
-        height: 350px;
-        width: 300px;
-
-        &__title {
-            text-align: center;
-        }
-
-        &__close {
-            cursor: pointer;
-            display: flex;
-            justify-content: flex-end;
-        }
-    }
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 100;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
 }
 
-// ************************ Кнопка вызова модального окна ************************ //
-.modal__btn {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: 1px solid black;
-    border-radius: 30px;
-    height: 50px;
-    width: 150px;
-    cursor: pointer;
+.modal.show {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 1;
+}
+
+.modal-content {
+  background-color: transparent;
+  margin: auto;
+  padding: 0;
+  border: 0;
+  width: 96%;
+  max-width: 450px;
+  position: relative;
+  opacity: 0;
+  transform: translateY(-50px);
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.modal.show .modal-content {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.close-modal-btn {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background-color: transparent;
+  cursor: pointer;
+  z-index: 2;
+
+  svg path {
+    fill: var(--black-color);
+  }
+}
+
+.form__successfully {
+  display: none;
+
+  text-align: center;
+  font-size: 16px;
+  color: var(--black-color);
+}
+
+.modal {
+
+  // .modal__form
+
+  &__form {
+    position: relative;
+    padding: 60px;
+    border-radius: 20px;
+    background: rgba(214, 214, 214, 0.90);
+    backdrop-filter: blur(2px);
+
+    &.successfully {
+      .form__successfully {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: rgba(214, 214, 214, 1);
+        border-radius: 20px;
+
+        z-index: 1;
+      }
+    }
+
+    .form__title,
+    .form__descr {
+      color: var(--black-color);
+
+      @media (max-width: $breakpoint768) {
+        text-align: left;
+      }
+    }
+
+    .form__groups {
+      grid-template-columns: repeat(1, 1fr);
+    }
+
+    .form__btn {
+      background-color: var(--secondary-color);
+
+      @media (hover: hover) {
+        &:hover {
+          background-color: var(--primary-color);
+        }
+      }
+
+      @media (max-width: $breakpoint768) {
+        max-width: 100%;
+        min-height: 60px;
+      }
+    }
+  }
 }

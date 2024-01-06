@@ -819,6 +819,7 @@ main {
   -webkit-column-gap: 10px;
      -moz-column-gap: 10px;
           column-gap: 10px;
+  text-align: left;
   cursor: pointer;
 }
 
@@ -2350,6 +2351,11 @@ main {
   background-repeat: no-repeat;
   background-position: center top;
   background-size: cover;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  pointer-events: none;
 }
 
 .directions__catalog {
@@ -2536,6 +2542,126 @@ main {
 
 .hero__title span {
   color: var(--primary-color);
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 100;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+  opacity: 0;
+  -webkit-transition: opacity 0.3s ease-in-out;
+  -o-transition: opacity 0.3s ease-in-out;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.modal.show {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  opacity: 1;
+}
+
+.modal-content {
+  background-color: transparent;
+  margin: auto;
+  padding: 0;
+  border: 0;
+  width: 96%;
+  max-width: 450px;
+  position: relative;
+  opacity: 0;
+  -webkit-transform: translateY(-50px);
+      -ms-transform: translateY(-50px);
+          transform: translateY(-50px);
+  -webkit-transition: opacity 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+  transition: opacity 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+  -o-transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+}
+
+.modal.show .modal-content {
+  opacity: 1;
+  -webkit-transform: translateY(0);
+      -ms-transform: translateY(0);
+          transform: translateY(0);
+}
+
+.close-modal-btn {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background-color: transparent;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.close-modal-btn svg path {
+  fill: var(--black-color);
+}
+
+.form__successfully {
+  display: none;
+  text-align: center;
+  font-size: 16px;
+  color: var(--black-color);
+}
+
+.modal__form {
+  position: relative;
+  padding: 60px;
+  border-radius: 20px;
+  background: rgba(214, 214, 214, 0.9);
+  -webkit-backdrop-filter: blur(2px);
+          backdrop-filter: blur(2px);
+}
+
+.modal__form.successfully .form__successfully {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  background: #d6d6d6;
+  border-radius: 20px;
+  z-index: 1;
+}
+
+.modal__form .form__title,
+.modal__form .form__descr {
+  color: var(--black-color);
+}
+
+.modal__form .form__groups {
+  grid-template-columns: repeat(1, 1fr);
+}
+
+.modal__form .form__btn {
+  background-color: var(--secondary-color);
 }
 
 .footer {
@@ -4473,6 +4599,16 @@ main {
     font-size: 24px;
   }
 
+  .modal__form .form__title,
+  .modal__form .form__descr {
+    text-align: left;
+  }
+
+  .modal__form .form__btn {
+    max-width: 100%;
+    min-height: 60px;
+  }
+
   .footer {
     padding: 30px 0;
   }
@@ -4623,6 +4759,10 @@ main {
   }
 
   .directions__form .form__btn:hover {
+    background-color: var(--primary-color);
+  }
+
+  .modal__form .form__btn:hover {
     background-color: var(--primary-color);
   }
 }
