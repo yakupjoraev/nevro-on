@@ -1,9 +1,10 @@
 .hero {
   position: relative;
+  z-index: 1;
   margin-top: -140px;
   background: linear-gradient(180deg, #111 0%, #120700 100%);
   background-repeat: no-repeat;
-  min-height: 100vh;
+  min-height: 1200px;
 
   &::before {
     content: '';
@@ -14,10 +15,101 @@
     height: 100%;
     background-image: url('../img/hero-bg.svg');
     background-repeat: no-repeat;
+    background-position: right;
+    user-select: none;
+    pointer-events: none;
+    z-index: -1;
+
+    @media (max-width: $breakpoint1450) {
+      background-position: center;
+    }
+
+    @media (max-width: $breakpoint992) {
+      background-position: top;
+    }
+
+  }
+
+
+  @media (max-width: $breakpoint992) {
+    min-height: 700px;
   }
 
 
   // .hero__inner
 
-  &__inner {}
+  &__inner {
+    min-height: 1200px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    @media (max-width: $breakpoint992) {
+      min-height: 700px;
+    }
+
+  }
+
+  // .hero__info
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    row-gap: 60px;
+    max-width: 700px;
+    padding: 40px 0;
+
+    @media (max-width: $breakpoint992) {
+      row-gap: 40px;
+    }
+
+
+    @media (max-width: $breakpoint768) {
+      row-gap: 20px;
+    }
+
+  }
+
+  // .hero__font
+
+  &__font {
+
+    @media (max-width: $breakpoint1450) {
+      width: 480px;
+      height: auto;
+    }
+
+    @media (max-width: $breakpoint992) {
+      width: 340px;
+    }
+
+    @media (max-width: $breakpoint768) {
+      width: 280px;
+    }
+
+  }
+
+  // .hero__title
+
+  &__title {
+    font-size: 42px;
+    line-height: 100%;
+    color: var(--white-color);
+    text-transform: uppercase;
+
+    span {
+      color: var(--primary-color);
+    }
+
+    @media (max-width: $breakpoint992) {
+      font-size: 32px;
+    }
+
+    @media (max-width: $breakpoint768) {
+      font-size: 24px;
+    }
+
+  }
+
 }

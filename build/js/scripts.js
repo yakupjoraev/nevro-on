@@ -130,6 +130,42 @@ function doctorsSlider() {
 
 doctorsSlider();
 
+function doctorSlider() {
+  const container = document.querySelector('.doctor');
+  if (!container) {
+    return null
+  }
+
+  const swiper = new Swiper('.doctor__swiper', {
+    // Default parameters
+    slidesPerView: "auto",
+    spaceBetween: 20,
+
+    // Navigation arrows
+    navigation: {
+      nextEl: '.doctor__arrow--next',
+      prevEl: '.doctor__arrow--prev',
+    },
+
+    pagination: {
+      el: '.doctor__swiper-pagination',
+      type: 'bullets',
+      clickable: true
+    },
+
+    // Responsive breakpoints
+    breakpoints: {
+
+      // when window width is >= 1200px
+      1200: {
+        spaceBetween: 60
+      }
+    }
+  })
+}
+
+doctorSlider();
+
 
 function doctors() {
   const container = document.querySelector('.doctors');

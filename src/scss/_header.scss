@@ -411,3 +411,40 @@
   }
 
 }
+
+.header--main {
+
+  .burger:after,
+  .burger:before,
+  .burger span {
+    background: var(--white-color);
+  }
+
+  .logo__link {
+    background-color: transparent;
+  }
+
+  .menu__item--grey .menu__item-link {
+    background-color: transparent;
+    color: var(--white-color);
+  }
+
+  .menu__item--grey {
+    background-color: transparent;
+    box-shadow: none;
+  }
+
+  .menu__item--icon {
+    img {
+      display: none;
+    }
+  }
+
+  .menu__item--btn {
+
+    .menu__item-link {
+      background-color: transparent;
+      border: 1px solid var(--white-color);
+    }
+  }
+}
