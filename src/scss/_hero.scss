@@ -20,8 +20,16 @@
     pointer-events: none;
     z-index: -1;
 
-    @media (max-width: $breakpoint1450) {
+    @media (max-width: 1600px) {
       background-position: center;
+    }
+
+    @media (max-width: $breakpoint1450) {
+      background-position: -150px center;
+    }
+
+    @media (max-width: 1200px) {
+      background-position: -350px center;
     }
 
     @media (max-width: $breakpoint992) {
@@ -32,7 +40,7 @@
 
 
   @media (max-width: $breakpoint992) {
-    min-height: 700px;
+    min-height: 800px;
   }
 
 
@@ -46,7 +54,7 @@
     justify-content: center;
 
     @media (max-width: $breakpoint992) {
-      min-height: 700px;
+      min-height: 800px;
     }
 
   }
@@ -99,7 +107,7 @@
     text-transform: uppercase;
 
     span {
-      color: var(--primary-color);
+      color: #57C600;
     }
 
     @media (max-width: $breakpoint992) {

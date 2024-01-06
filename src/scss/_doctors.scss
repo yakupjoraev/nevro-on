@@ -17,6 +17,8 @@
       background-image: url('../img/news-page/bg.svg');
       background-repeat: no-repeat;
       background-position: top right;
+      user-select: none;
+      pointer-events: none;
       // z-index: -1;
 
       @media (max-width: $breakpoint992) {

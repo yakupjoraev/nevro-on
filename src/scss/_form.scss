@@ -206,6 +206,10 @@
     font-size: 24px;
     color: var(--white-color);
 
+    @media (max-width: $breakpoint1450) {
+      font-size: 20px;
+    }
+
     @media screen and (max-width: 1300px) {
       font-size: 12px;
 

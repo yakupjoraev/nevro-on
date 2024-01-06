@@ -74,30 +74,28 @@ function moreText() {
   const containers = document.querySelectorAll('[data-more-wrapper]');
 
   if (!containers) {
-    return null
+    return null;
   }
+
   containers.forEach(container => {
     const toggleButton = container.querySelector("[data-more-btn]");
-    const textBlock = container.querySelector("[data-more-text]");
 
     container.addEventListener("click", function () {
       this.classList.toggle("more");
-      textBlock.classList.toggle("more");
 
-      if (textBlock) {
-        if (textBlock.classList.contains("more")) {
-          toggleButton.querySelector('span').innerText = "Свернуть";
-        } else {
-          toggleButton.querySelector('span').innerText = "Нажмите, чтобы открыть";
-        }
+      const more = this.classList.contains('more');
+
+      if (more) {
+        toggleButton.querySelector('span').innerText = "Свернуть";
+      } else {
+        toggleButton.querySelector('span').innerText = "Нажмите, чтобы открыть";
       }
     });
   });
-
-
 }
 
 moreText();
+
 
 
 function doctorsSlider() {
@@ -398,6 +396,71 @@ function map() {
 
 map();
 
+document.addEventListener("DOMContentLoaded", function () {
+  const container = document.querySelector('.news-page');
+
+  if (!container) {
+    return null;
+  }
+
+  let newsItems = document.querySelectorAll(".news-page__item");
+
+  function updateNewsItems() {
+    newsItems.forEach(function (item) {
+      const textContainer = item.querySelector(".news-page__item-texts");
+      const textLines = textContainer.textContent.trim().split('\n').filter(Boolean).length;
+
+      if (window.innerWidth <= 991) {
+        // Для разрешения менее или равно 991px
+        item.classList.remove("desktop-more");
+      }
+      else if (window.innerWidth <= 767) {
+        // Для разрешения от 992px до 1440px включительно
+        if (textLines > 4) {
+          item.classList.add("desktop-more");
+        } else {
+          item.classList.remove("desktop-more");
+        }
+      }
+      else if (window.innerWidth <= 991) {
+        // Для разрешения от 992px до 1440px включительно
+        if (textLines > 9) {
+          item.classList.add("desktop-more");
+        } else {
+          item.classList.remove("desktop-more");
+        }
+      }
+
+      else if (window.innerWidth <= 1024) {
+        // Для разрешения от 992px до 1440px включительно
+        if (textLines > 20) {
+          item.classList.add("desktop-more");
+        } else {
+          item.classList.remove("desktop-more");
+        }
+      }
+      else if (window.innerWidth <= 1440) {
+        // Для разрешения от 992px до 1440px включительно
+        if (textLines > 24) {
+          item.classList.add("desktop-more");
+        } else {
+          item.classList.remove("desktop-more");
+        }
+      } else {
+        // Для разрешения более 1440px
+        if (textLines > 17) {
+          item.classList.add("desktop-more");
+        } else {
+          item.classList.remove("desktop-more");
+        }
+      }
+    });
+  }
+
+  // Вызовите функцию при загрузке страницы и изменении размера окна
+  updateNewsItems();
+  window.addEventListener('resize', updateNewsItems);
+});
 
 
 const openModalBtns = document.querySelectorAll('.open-modal-btn');

@@ -1,10 +1,10 @@
 // Footer
 .footer {
-  padding: 124px 0;
+  padding: 124px 0 16px;
   background-color: #232323;
 
   @media (max-width: $breakpoint1450) {
-    padding: 80px 0;
+    padding: 80px 0 16px;
   }
 
   @media (max-width: $breakpoint992) {
@@ -12,7 +12,7 @@
   }
 
   @media (max-width: $breakpoint768) {
-    padding: 30px 0;
+    padding: 30px 0 16px;
   }
 
   // .footer__inner
@@ -58,6 +58,10 @@
   &__nav {
     flex: 0 1 714px;
     width: 100%;
+
+    @media (max-width: $breakpoint1450) {
+      flex: 0 1 580px;
+    }
 
     @media (max-width: $breakpoint992) {
       order: 2;
