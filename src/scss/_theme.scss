@@ -1,0 +1,112 @@
+/* The switch - the box around the slider */
+.switch-theme {
+  font-size: 17px;
+  position: relative;
+  display: inline-block;
+  width: 64px;
+  height: 34px;
+  margin-right: auto;
+
+  @media (max-width: 1200px) {
+    margin-right: 20px;
+    margin-left: auto;
+  }
+
+  @media (max-width: $breakpoint480) {
+    max-width: none;
+  }
+}
+
+/* Hide default HTML checkbox */
+.switch-theme .checkbox-theme {
+  position: absolute;
+  z-index: -100;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider-theme {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--primary-color);
+  // border: 1px solid var(--light-grey);
+  transition: .4s;
+  border-radius: 30px;
+}
+
+.slider-theme:before {
+  position: absolute;
+  content: "";
+  height: 28px;
+  width: 28px;
+  border-radius: 20px;
+  left: 4px;
+  bottom: 3px;
+  background-color: var(--white-color);
+  transition: .4s;
+}
+
+.checkbox-theme:checked+.slider-theme {
+  // background-color: var(--white-color);
+  // border: 1px solid var(--primary-color);
+}
+
+.checkbox-theme:focus+.slider-theme {
+  box-shadow: 0 0 1px var(--primary-color);
+}
+
+.checkbox-theme:checked+.slider-theme:before {
+  transform: translateX(1.7em);
+  background-color: var(--black-color);
+}
+
+.main__body.light-mode {
+
+  .toggle-sun {
+    display: none;
+  }
+
+  .toggle-moon {
+    display: flex;
+  }
+
+  .hero__font {
+    filter: invert(1);
+  }
+
+  .form__group--select::after {
+    filter: invert(1);
+  }
+
+  .doctors__inner::before,
+  .news-page__inner::before {
+    filter: invert(1);
+  }
+
+  .header--main .logo__link {
+    background-color: var(--directions-bg);
+  }
+
+  .header--main .logo__text {
+    color: var(--black-color);
+  }
+
+  @media screen and (max-width: 1300px) {
+    .menu__item--grey .menu__item-link {
+      color: var(--black-color);
+    }
+
+    .header--main .menu__item--btn .menu__item-link {
+      background-color: var(--primary-color);
+      border: 0;
+    }
+  }
+
+
+}

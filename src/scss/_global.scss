@@ -24,7 +24,7 @@
 
 // Body Locked
 body {
-  background-color: #F1F1F2;
+  background-color: var(--directions-bg);
   font-family: var(--primary-font);
   font-style: normal;
   font-weight: 400;

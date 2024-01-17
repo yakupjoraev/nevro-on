@@ -461,6 +461,13 @@ document.addEventListener("DOMContentLoaded", function () {
   window.addEventListener('resize', updateNewsItems);
 });
 
+//Toggle theme
+const themeBtn = document.querySelector('.slider-theme');
+themeBtn.addEventListener('click', () => {
+  let element = document.body;
+  element.classList.toggle('light-mode')
+})
+
 
 const openModalBtns = document.querySelectorAll('.open-modal-btn');
 const closeModalBtns = document.querySelectorAll('.close-modal-btn');
@@ -472,6 +479,8 @@ openModalBtns.forEach(btn => {
     const modal = document.getElementById(modalId);
     modal.classList.add('show');
   });
+
+
 });
 
 closeModalBtns.forEach(btn => {
@@ -486,3 +495,13 @@ window.addEventListener('click', (event) => {
     event.target.classList.remove('show');
   }
 });
+
+// Функция для открытия модалки через минуту
+function openModalAfterDelay() {
+  const modalId = 'modal1'; // Замените 'yourModalId' на реальный идентификатор модалки
+  const modal = document.getElementById(modalId);
+  modal.classList.add('show');
+}
+
+// Задержка в 1 минуту (60000 миллисекунд)
+setTimeout(openModalAfterDelay, 60000);

@@ -22,4 +22,21 @@ $burgerActiveColor: 'white';
   --secondary-color: #232323;
   --black-color: #000;
   --white-color: #fff;
+
+  --light-grey: #D7D7D7;
+
+  --hero-bg: linear-gradient(180deg, #111 0%, #120700 100%);
+  --directions-bg: #F4F4F4;
+}
+
+.light-mode {
+  //colors  
+  --primary-color: #76B662;
+  --secondary-color: #e6e6e6;
+  --black-color: #fff;
+  --white-color: #000;
+  --light-grey: #D7D7D7;
+
+  --hero-bg: linear-gradient(180deg, #fcfbfb 0%, #f5f5f5 100%);
+  --directions-bg: #101010;
 }
