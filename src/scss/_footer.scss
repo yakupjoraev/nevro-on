@@ -79,6 +79,7 @@
     align-items: flex-start;
     justify-content: space-between;
     column-gap: 20px;
+    width: fit-content;
 
     @media (max-width: $breakpoint992) {
       flex-direction: column;
