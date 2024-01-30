@@ -2491,10 +2491,10 @@ main {
 .directions__list {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  row-gap: 24px;
-  -webkit-column-gap: 24px;
-     -moz-column-gap: 24px;
-          column-gap: 24px;
+  row-gap: 16px;
+  -webkit-column-gap: 16px;
+     -moz-column-gap: 16px;
+          column-gap: 16px;
   padding: 24px 40px;
 }
 
@@ -3166,7 +3166,7 @@ main {
   }
 
   .directions__title {
-    margin-bottom: 30px;
+    margin-bottom: 10px;
     font-size: 30px;
   }
 
@@ -3469,6 +3469,8 @@ main {
     -webkit-box-flex: 0;
         -ms-flex: 0 1 50%;
             flex: 0 1 50%;
+    margin-top: -300px;
+    padding: 40px 24px 0;
   }
 
   .directions__item {
@@ -3873,7 +3875,6 @@ main {
 
   .directions__catalog {
     margin-top: -140px;
-    padding: 40px 24px 32px;
   }
 
   .directions__form {
