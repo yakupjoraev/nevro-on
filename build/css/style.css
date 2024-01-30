@@ -2864,6 +2864,11 @@ main {
           box-shadow: 0 1px 2px 0 rgba(252, 252, 252, 0.25);
 }
 
+.main__body.light-mode .header--main .menu__item--grey {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
 .main__body.light-mode .menu__item--icon img {
   -webkit-filter: invert(1);
           filter: invert(1);

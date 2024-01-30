@@ -83,6 +83,10 @@
     box-shadow: 0 1px 2px 0 rgba(252, 252, 252, 0.25);
   }
 
+  .header--main .menu__item--grey {
+    box-shadow: none;
+  }
+
   .menu__item--icon img {
     filter: invert(1);
   }
