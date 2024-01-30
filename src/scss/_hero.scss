@@ -4,7 +4,7 @@
   margin-top: -140px;
   background: var(--hero-bg);
   background-repeat: no-repeat;
-  min-height: 1200px;
+  min-height: 1000px;
 
   &::before {
     content: '';
@@ -26,9 +26,9 @@
     content: '';
     position: absolute;
     right: 0;
-    top: 0;
-    width: 1180px;
-    height: 762px;
+    top: 10%;
+    width: 900px;
+    height: 662px;
     background-image: url('../img/branches.svg');
     background-repeat: no-repeat;
     background-size: cover;
@@ -45,6 +45,7 @@
     @media (max-width: $breakpoint1450) {
       width: 680px;
       height: 460px;
+      top: 50%;
     }
 
     @media (max-width: 1200px) {
@@ -63,32 +64,30 @@
     }
   }
 
-  @media (max-width: 1200px) {
-    min-height: 1000px;
+  @media (max-width: $breakpoint1450) {
+    min-height: 700px;
   }
 
-
-  @media (max-width: $breakpoint992) {
-    min-height: 800px;
+  @media (max-width: 1200px) {
+    min-height: 600px;
   }
 
 
   // .hero__inner
 
   &__inner {
-    min-height: 1200px;
+    min-height: 1000px;
 
     display: flex;
     flex-direction: column;
     justify-content: center;
 
-    @media (max-width: 1200px) {
-      min-height: 1000px;
+    @media (max-width: $breakpoint1450) {
+      min-height: 700px;
     }
 
-
-    @media (max-width: $breakpoint992) {
-      min-height: 800px;
+    @media (max-width: 1200px) {
+      min-height: 600px;
     }
 
   }
@@ -100,15 +99,22 @@
     flex-direction: column;
     row-gap: 60px;
     max-width: 700px;
-    padding: 40px 0;
+    padding: 40px 0 120px;
 
-    @media (max-width: $breakpoint992) {
+    @media (max-width: $breakpoint1450) {
       row-gap: 40px;
+      padding: 40px 0 200px;
     }
 
+    @media (max-width: 1200px) {
+      padding: 40px 0 80px;
+    }
+
+    @media (max-width: $breakpoint992) {}
 
     @media (max-width: $breakpoint768) {
       row-gap: 20px;
+      padding: 0 0 80px;
     }
 
   }
@@ -118,7 +124,7 @@
   &__font {
 
     @media (max-width: $breakpoint1450) {
-      width: 480px;
+      width: 380px;
       height: auto;
     }
 
@@ -142,6 +148,10 @@
 
     span {
       color: #57C600;
+    }
+
+    @media (max-width: $breakpoint1450) {
+      font-size: 36px;
     }
 
     @media (max-width: $breakpoint992) {

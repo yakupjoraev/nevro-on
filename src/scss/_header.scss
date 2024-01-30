@@ -14,7 +14,7 @@
   width: 100%;
   padding: 20px 0 40px;
 
-  @media (max-width: 1300px) {
+  @media (max-width: 1400px) {
     padding: 30px 0;
   }
 }
@@ -28,7 +28,7 @@
     margin-right: 20px;
   }
 
-  @media (max-width: 1300px) {
+  @media (max-width: 1400px) {
     flex: 0 1 auto;
   }
 }
@@ -46,9 +46,8 @@
     padding: 10px 10px;
   }
 
-  @media (max-width: 1300px) {
+  @media (max-width: 1400px) {
     flex-direction: column;
-    row-gap: 3px;
     padding: 0;
     background-color: transparent;
   }
@@ -56,19 +55,29 @@
 
 .logo__img {
   max-width: 100%;
+  transition: margin 0.2s linear;
 
   @media (max-width: 1740px) {
     max-width: 180px;
   }
 
-  @media (max-width: 1300px) {
-    width: 156px;
-    height: 45px;
+  @media (max-width: 1400px) {
+    max-width: 200px;
+    width: 200px;
+    height: 60px;
+  }
+
+  @media (max-width: 1200px) {
+    margin-bottom: -16px;
   }
 
   @media (max-width: $breakpoint768) {
     width: 180px;
     height: auto;
+  }
+
+  @media (max-width: $breakpoint480) {
+    margin-bottom: -20px;
   }
 }
 
@@ -83,7 +92,7 @@
     font-size: 8px;
   }
 
-  @media (max-width: 1300px) {
+  @media (max-width: 1400px) {
     display: none;
   }
 }
@@ -196,7 +205,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 180px;
+    width: 160px;
     height: 60px;
 
     border-radius: 10px;
@@ -219,10 +228,7 @@
 }
 
 // Burger menu styles
-@media screen and (max-width: 1300px) {
-  .header--main .logo__link {
-    padding-top: 10px;
-  }
+@media screen and (max-width: 1400px) {
 
   .navbar {
     padding: 20px 0 30px;
@@ -410,7 +416,7 @@
 
 .logo--pages {}
 
-@media screen and (max-width: 1300px) {
+@media screen and (max-width: 1400px) {
   .main__body.locked {
     .header--pages {
 
@@ -427,6 +433,9 @@
 }
 
 .header--main {
+  .menu__item--icon {
+    display: none;
+  }
 
   .burger:after,
   .burger:before,
