@@ -2594,7 +2594,7 @@ main {
   margin-top: -140px;
   background: var(--hero-bg);
   background-repeat: no-repeat;
-  min-height: 1000px;
+  min-height: 800px;
 }
 
 .hero::before {
@@ -2629,7 +2629,7 @@ main {
 }
 
 .hero__inner {
-  min-height: 1000px;
+  min-height: 800px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
