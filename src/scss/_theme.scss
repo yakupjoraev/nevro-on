@@ -69,6 +69,22 @@
 }
 
 .main__body.light-mode {
+  .footer__logo {
+    display: none;
+  }
+
+  .footer__logo--black {
+    display: flex;
+  }
+
+  .callback__logo-img {
+    display: none;
+  }
+
+  .callback__logo-img--white {
+    display: flex;
+  }
+
   .services-page__call-label {
     color: var(--black-color);
   }

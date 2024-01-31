@@ -522,6 +522,10 @@ main {
           flex: 0 1 1000px;
 }
 
+.callback__logo-img--white {
+  display: none;
+}
+
 .form {
   padding: 30px;
   background: url("../img/callback/form-bg.png"), var(--secondary-color) no-repeat;
@@ -2851,6 +2855,26 @@ main {
   background-color: var(--black-color);
 }
 
+.main__body.light-mode .footer__logo {
+  display: none;
+}
+
+.main__body.light-mode .footer__logo--black {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.main__body.light-mode .callback__logo-img {
+  display: none;
+}
+
+.main__body.light-mode .callback__logo-img--white {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
 .main__body.light-mode .services-page__call-label {
   color: var(--black-color);
 }
@@ -3103,6 +3127,10 @@ main {
 }
 
 .footer__copy--registr-mobile {
+  display: none;
+}
+
+.footer__logo--black {
   display: none;
 }
 
