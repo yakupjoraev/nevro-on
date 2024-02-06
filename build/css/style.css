@@ -2856,7 +2856,7 @@ main {
 }
 
 .main__body.light-mode .services-page__inner::before {
-  opacity: 0.4;
+  opacity: 0.1;
 }
 
 .main__body.light-mode .services-page__btn {
