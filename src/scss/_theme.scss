@@ -69,6 +69,14 @@
 }
 
 .main__body.light-mode {
+  .services-page__inner::before {
+    opacity: 0.4;
+  }
+
+  .services-page__btn {
+    color: var(--white-color);
+  }
+
   .footer__logo {
     display: none;
   }

@@ -2855,6 +2855,14 @@ main {
   background-color: var(--black-color);
 }
 
+.main__body.light-mode .services-page__inner::before {
+  opacity: 0.4;
+}
+
+.main__body.light-mode .services-page__btn {
+  color: var(--white-color);
+}
+
 .main__body.light-mode .footer__logo {
   display: none;
 }
