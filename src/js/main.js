@@ -461,6 +461,120 @@ document.addEventListener("DOMContentLoaded", function () {
   window.addEventListener('resize', updateNewsItems);
 });
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function pageLinks() {
+  const container = document.querySelector('.news');
+
+  if (!container) {
+    return null
+  }
+
+  // Получаем все ссылки с классом "news__item"
+  var links = document.querySelectorAll('.news__item');
+
+  // Добавляем обработчик событий на каждую ссылку
+  links.forEach(function (link) {
+    link.addEventListener('click', function (e) {
+      e.preventDefault(); // Предотвращаем стандартное действие ссылки
+
+      // Получаем URL следующей страницы из атрибута href ссылки
+      var nextPageUrl = this.getAttribute('href');
+
+      // Получаем id блока, к которому нужно проскроллить
+      var blockId = nextPageUrl.split('#')[1];
+
+      // Переходим на следующую страницу
+      window.location.href = nextPageUrl;
+
+      // Через 500 миллисекунд после перехода на следующую страницу проскролливаем к блоку
+      setTimeout(function () {
+        var block = document.getElementById(blockId);
+        if (block) {
+          block.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 1000);
+    });
+  });
+}
+
+pageLinks();
+
+
+
+
+
+
+
+document.addEventListener("DOMContentLoaded", function () {
+  // Получаем значение параметра из URL
+  const urlParams = new URLSearchParams(window.location.search);
+  const tabParam = urlParams.get("tab");
+
+  if (tabParam) {
+    // Удаляем класс active у всех табов и их содержимого
+    document.querySelectorAll(".services-page__item").forEach((tab) => tab.classList.remove("active"));
+    document.querySelectorAll(".services-page__content").forEach((content) => content.classList.remove("active"));
+
+    // Добавляем класс active соответствующему табу и его содержимому
+    const targetTab = document.querySelector(`.services-page__item[data-services-item="${tabParam}"]`);
+    const targetContent = document.querySelector(`.services-page__content[data-services-content="${tabParam}"]`);
+
+    if (targetTab && targetContent) {
+      targetTab.classList.add("active");
+      targetContent.classList.add("active");
+    }
+  }
+});
+
+
+
+
+
+
+
+
+
+document.addEventListener("DOMContentLoaded", function () {
+  // Получаем значение параметра из URL
+  const urlParams = new URLSearchParams(window.location.search);
+  const tabParam = urlParams.get("doc");
+
+  if (tabParam) {
+    // Удаляем класс active у всех табов и их содержимого
+    document.querySelectorAll(".doctors__content").forEach((content) => content.classList.remove("active"));
+
+    // Добавляем класс active соответствующему табу и его содержимому
+    const targetContent = document.querySelector(`.doctors__content[data-doctor-content="${tabParam}"]`);
+
+    if (targetContent) {
+      targetContent.classList.add("active");
+    }
+  }
+});
+
+
+
+
+
+
+
+
+
 //Toggle theme
 const themeBtn = document.querySelector('.slider-theme');
 themeBtn.addEventListener('click', () => {
