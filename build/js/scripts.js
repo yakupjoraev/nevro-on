@@ -558,11 +558,14 @@ document.addEventListener("DOMContentLoaded", function () {
   if (tabParam) {
     // Удаляем класс active у всех табов и их содержимого
     document.querySelectorAll(".doctors__content").forEach((content) => content.classList.remove("active"));
+    document.querySelectorAll(".doctors__slide").forEach((content) => content.classList.remove("active"));
 
     // Добавляем класс active соответствующему табу и его содержимому
     const targetContent = document.querySelector(`.doctors__content[data-doctor-content="${tabParam}"]`);
+    const slideContent = document.querySelector(`.doctors__slide[data-doctor-slide="${tabParam}"]`);
 
-    if (targetContent) {
+    if (slideContent && targetContent) {
+      slideContent.classList.add("active");
       targetContent.classList.add("active");
     }
   }
